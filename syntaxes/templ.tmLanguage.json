@@ -1,0 +1,200 @@
+{
+  "scopeName": "source.templ",
+  "name": "Templ",
+  "fileTypes": ["templ"],
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#component-definition"
+    },
+    {
+      "include": "#css-blocks"
+    },
+    {
+      "include": "#script-blocks"
+    },
+    {
+      "include": "#html-elements"
+    },
+    {
+      "include": "#go-expressions"
+    },
+    {
+      "include": "#templ-directives"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.templ",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.templ",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "component-definition": {
+      "patterns": [
+        {
+          "name": "meta.function.component.templ",
+          "begin": "\\b(component)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(",
+          "beginCaptures": {
+            "1": { "name": "keyword.control.component.templ" },
+            "2": { "name": "entity.name.function.component.templ" }
+          },
+          "end": "\\)",
+          "patterns": [
+            {
+              "include": "source.go"
+            }
+          ]
+        }
+      ]
+    },
+    "css-blocks": {
+      "patterns": [
+        {
+          "name": "meta.embedded.block.css.templ",
+          "begin": "\\b(css)\\s*\\{",
+          "beginCaptures": {
+            "1": { "name": "keyword.control.css.templ" }
+          },
+          "end": "\\}",
+          "contentName": "source.css",
+          "patterns": [
+            {
+              "include": "source.css"
+            }
+          ]
+        }
+      ]
+    },
+    "script-blocks": {
+      "patterns": [
+        {
+          "name": "meta.embedded.block.javascript.templ",
+          "begin": "\\b(script)\\s*\\{",
+          "beginCaptures": {
+            "1": { "name": "keyword.control.script.templ" }
+          },
+          "end": "\\}",
+          "contentName": "source.js",
+          "patterns": [
+            {
+              "include": "source.js"
+            }
+          ]
+        }
+      ]
+    },
+    "html-elements": {
+      "patterns": [
+        {
+          "name": "meta.tag.block.any.html",
+          "begin": "(<)([a-zA-Z0-9:]+)",
+          "beginCaptures": {
+            "1": { "name": "punctuation.definition.tag.begin.html" },
+            "2": { "name": "entity.name.tag.html" }
+          },
+          "end": "(>)",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.tag.end.html" }
+          },
+          "patterns": [
+            {
+              "include": "#tag-stuff"
+            }
+          ]
+        },
+        {
+          "name": "meta.tag.block.any.html",
+          "begin": "(</)([a-zA-Z0-9:]+)",
+          "beginCaptures": {
+            "1": { "name": "punctuation.definition.tag.begin.html" },
+            "2": { "name": "entity.name.tag.html" }
+          },
+          "end": "(>)",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.tag.end.html" }
+          }
+        }
+      ]
+    },
+    "tag-stuff": {
+      "patterns": [
+        {
+          "name": "entity.other.attribute-name.html",
+          "match": "\\b([a-zA-Z-:]+)\\s*(=)"
+        },
+        {
+          "name": "string.quoted.double.html",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "include": "#go-expressions"
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.html",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "include": "#go-expressions"
+            }
+          ]
+        }
+      ]
+    },
+    "go-expressions": {
+      "patterns": [
+        {
+          "name": "meta.embedded.block.go.templ",
+          "begin": "\\{",
+          "end": "\\}",
+          "contentName": "source.go",
+          "patterns": [
+            {
+              "include": "source.go"
+            }
+          ]
+        },
+        {
+          "name": "meta.embedded.line.go.templ",
+          "begin": "\\{",
+          "end": "\\}",
+          "contentName": "source.go",
+          "patterns": [
+            {
+              "include": "source.go"
+            }
+          ]
+        }
+      ]
+    },
+    "templ-directives": {
+      "patterns": [
+        {
+          "name": "keyword.control.templ",
+          "match": "\\b(if|else|for|switch|case|default)\\b"
+        },
+        {
+          "name": "support.function.templ",
+          "match": "\\b(component|css|script|@)\\b"
+        },
+        {
+          "name": "variable.other.templ",
+          "match": "\\b(children|props)\\b"
+        }
+      ]
+    }
+  }
+}

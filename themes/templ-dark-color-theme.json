@@ -1,0 +1,94 @@
+{
+  "name": "Templ Dark",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#1e1e1e",
+    "editor.foreground": "#d4d4d4",
+    "editorLineNumber.foreground": "#858585",
+    "editor.selectionBackground": "#264f78",
+    "editor.selectionHighlightBackground": "#add6ff26"
+  },
+  "tokenColors": [
+    {
+      "name": "Templ Component Definition",
+      "scope": "meta.function.component.templ",
+      "settings": {
+        "foreground": "#4fc1ff"
+      }
+    },
+    {
+      "name": "Templ Keywords",
+      "scope": "keyword.control.templ",
+      "settings": {
+        "foreground": "#c586c0",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Templ Component Name",
+      "scope": "entity.name.function.component.templ",
+      "settings": {
+        "foreground": "#dcdcaa",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Templ CSS Block",
+      "scope": "meta.embedded.block.css.templ",
+      "settings": {
+        "foreground": "#ce9178"
+      }
+    },
+    {
+      "name": "Templ Script Block",
+      "scope": "meta.embedded.block.javascript.templ",
+      "settings": {
+        "foreground": "#4fc1ff"
+      }
+    },
+    {
+      "name": "Templ Go Expressions",
+      "scope": "meta.embedded.block.go.templ",
+      "settings": {
+        "foreground": "#9cdcfe"
+      }
+    },
+    {
+      "name": "Templ HTML Tags",
+      "scope": "entity.name.tag.html",
+      "settings": {
+        "foreground": "#569cd6"
+      }
+    },
+    {
+      "name": "Templ HTML Attributes",
+      "scope": "entity.other.attribute-name.html",
+      "settings": {
+        "foreground": "#9cdcfe"
+      }
+    },
+    {
+      "name": "Templ Comments",
+      "scope": "comment.line.double-slash.templ, comment.block.templ",
+      "settings": {
+        "foreground": "#6a9955",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Templ Functions",
+      "scope": "support.function.templ",
+      "settings": {
+        "foreground": "#dcdcaa",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Templ Variables",
+      "scope": "variable.other.templ",
+      "settings": {
+        "foreground": "#9cdcfe"
+      }
+    }
+  ]
+}

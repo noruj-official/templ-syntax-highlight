@@ -1,0 +1,76 @@
+{
+  "Templ Component": {
+    "prefix": "tcomponent",
+    "body": [
+      "component ${1:ComponentName}(${2:params}) {",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t${3:// Component content}",
+      "\t\t</div>",
+      "\t)",
+      "}"
+    ],
+    "description": "Create a new templ component"
+  },
+  "Templ CSS Block": {
+    "prefix": "tcss",
+    "body": [
+      "css {",
+      "\t${1:// CSS styles}",
+      "}"
+    ],
+    "description": "Create a CSS block in templ"
+  },
+  "Templ Script Block": {
+    "prefix": "tscript",
+    "body": [
+      "script {",
+      "\t${1:// JavaScript code}",
+      "}"
+    ],
+    "description": "Create a script block in templ"
+  },
+  "Templ If Statement": {
+    "prefix": "tif",
+    "body": [
+      "if ${1:condition} {",
+      "\t${2:// Content if true}",
+      "}"
+    ],
+    "description": "Create an if statement in templ"
+  },
+  "Templ For Loop": {
+    "prefix": "tfor",
+    "body": [
+      "for ${1:item} := range ${2:items} {",
+      "\t<div>",
+      "\t\t${3:// Loop content}",
+      "\t</div>",
+      "}"
+    ],
+    "description": "Create a for loop in templ"
+  },
+  "Templ HTML Element": {
+    "prefix": "telement",
+    "body": [
+      "<${1:div} ${2:class=\"${3}\"}>",
+      "\t${4:// Element content}",
+      "</${1:div}>"
+    ],
+    "description": "Create an HTML element with templ syntax"
+  },
+  "Templ Go Expression": {
+    "prefix": "texpr",
+    "body": [
+      "{ ${1:go expression} }"
+    ],
+    "description": "Insert a Go expression in templ"
+  },
+  "Templ Children": {
+    "prefix": "tchildren",
+    "body": [
+      "children..."
+    ],
+    "description": "Insert children placeholder in templ"
+  }
+}

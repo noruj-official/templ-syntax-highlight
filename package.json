@@ -1,0 +1,80 @@
+{
+  "name": "templ-syntax-highlight",
+  "displayName": "Templ Syntax Highlight",
+  "description": "Syntax highlighting for templ template files in Go applications",
+  "version": "1.0.0",
+  "publisher": "shaik-noor",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "keywords": [
+    "templ",
+    "go",
+    "golang",
+    "template",
+    "syntax",
+    "highlighting"
+  ],
+  "activationEvents": [
+    "onLanguage:templ"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "templ",
+        "aliases": ["Templ", "templ"],
+        "extensions": [".templ"],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/templ-light.svg",
+          "dark": "./icons/templ-dark.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "templ",
+        "scopeName": "source.templ",
+        "path": "./syntaxes/templ.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.go": "go",
+          "meta.embedded.block.css": "css",
+          "meta.embedded.block.javascript": "javascript"
+        }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "templ",
+        "path": "./snippets/templ.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "Templ Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/templ-dark-color-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/templ-syntax-highlight"
+  },
+  "license": "MIT"
+}
