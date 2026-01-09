@@ -29,8 +29,33 @@ A Visual Studio Code extension that provides syntax highlighting, snippets, and 
 
 ## Installation
 
-1. Install the extension from the VS Code marketplace
-2. Open any `.templ` file to activate the syntax highlighting
+### From VS Code Marketplace (Recommended)
+1. Open VS Code
+2. Go to Extensions view (`Ctrl+Shift+X` / `Cmd+Shift+X`)
+3. Search for "Templ Syntax Highlight"
+4. Click Install
+
+### From Open VSX Registry
+1. Visit [Open VSX](https://open-vsx.org/extension/shaik-noor/templ-syntax-highlight)
+2. Download the `.vsix` file
+3. In VS Code, go to Extensions view
+4. Click "..." menu → "Install from VSIX..."
+5. Select the downloaded file
+
+### Manual Installation
+1. Download the latest release from [GitHub Releases](https://github.com/noruj-official/templ-syntax-highlight/releases)
+2. In VS Code, go to Extensions view
+3. Click "..." menu → "Install from VSIX..."
+4. Select the downloaded `.vsix` file
+
+**Note:** After installation, open any `.templ` file to activate syntax highlighting.
+
+## Quick Start
+
+1. **Install the extension** from VS Code Marketplace or Open VSX
+2. **Open a `.templ` file** - syntax highlighting activates automatically
+3. **Try the examples** - use the provided `example.templ` file or create your own
+4. **Use snippets** - type `tcomp` and press Tab to create a new component
 
 ## Usage
 
@@ -168,11 +193,45 @@ The extension respects VS Code's editor settings for:
 
 To contribute or modify this extension:
 
-1. Clone the repository
-2. Install dependencies: `npm install`
-3. Make your changes
-4. Compile: `npm run compile`
-5. Test in VS Code by pressing `F5` to open a new Extension Development Host window
+### Setup
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/noruj-official/templ-syntax-highlight.git
+   cd templ-syntax-highlight
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+### Development Workflow
+1. **Make your changes** to the relevant files:
+   - `syntaxes/templ.tmLanguage.json` - Syntax highlighting rules
+   - `snippets/templ.json` - Code snippets
+   - `themes/templ-dark-color-theme.json` - Color theme
+   - `src/extension.ts` - Extension logic
+   - `language-configuration.json` - Language settings
+
+2. **Compile the extension:**
+   ```bash
+   npm run compile
+   ```
+
+3. **Test in VS Code:**
+   - Press `F5` to open a new Extension Development Host window
+   - Open the `example.templ` file to test syntax highlighting
+   - Try the snippets by typing `tcomp` and pressing Tab
+
+### Testing
+- Use the `example.templ` file to test all features
+- Check syntax highlighting for different templ constructs
+- Verify snippets work correctly
+- Test the dark theme
+
+### Building
+- Run `npm run compile` to build TypeScript files
+- Run `npx vsce package` to create a `.vsix` package
 
 ## File Structure
 
@@ -192,7 +251,11 @@ templ-syntax-highlight/
 ├── icons/
 │   ├── templ-light.svg            # Light theme icon
 │   └── templ-dark.svg             # Dark theme icon
-└── README.md                      # This file
+├── example.templ                  # Example templ file
+├── README.md                      # This file
+├── CHANGELOG.md                   # Version history
+├── LICENSE                        # MIT License
+└── .gitignore                     # Git ignore rules
 ```
 
 ## Known Issues
@@ -200,41 +263,32 @@ templ-syntax-highlight/
 - Formatting is basic and may need improvement for complex templ files
 - Some edge cases in syntax highlighting may not be perfectly handled
 
-## Publishing
+## Building from Source
 
-To publish this extension to VS Code Marketplace and Open VSX:
+If you want to build this extension from source:
 
-1. **Install publishing tools:**
+1. **Clone the repository:**
    ```bash
-   npm install -g vsce ovsx
+   git clone https://github.com/noruj-official/templ-syntax-highlight.git
+   cd templ-syntax-highlight
    ```
 
-2. **Create publisher accounts:**
-   - [VS Code Marketplace](https://marketplace.visualstudio.com/manage)
-   - [Open VSX Registry](https://open-vsx.org/)
-
-3. **Publish using the automated script:**
+2. **Install dependencies:**
    ```bash
-   # On Windows
-   publish.bat
-   
-   # On macOS/Linux
-   ./publish.sh
+   npm install
    ```
 
-4. **Or publish manually:**
+3. **Compile the extension:**
    ```bash
-   # Package the extension
-   vsce package
-   
-   # Publish to Microsoft Marketplace
-   vsce publish
-   
-   # Publish to Open VSX
-   ovsx publish
+   npm run compile
    ```
 
-For detailed publishing instructions, see [PUBLISHING.md](PUBLISHING.md).
+4. **Package the extension:**
+   ```bash
+   npx vsce package
+   ```
+
+This will create a `.vsix` file that you can install manually.
 
 ## Contributing
 
@@ -244,11 +298,20 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 
 This extension is licensed under the MIT License.
 
+## Extension Status
+
+This extension is published and available on:
+- **VS Code Marketplace**: Search for "Templ Syntax Highlight"
+- **Open VSX Registry**: Available at [open-vsx.org](https://open-vsx.org/extension/shaik-noor/templ-syntax-highlight)
+- **GitHub**: Source code and releases at [noruj-official/templ-syntax-highlight](https://github.com/noruj-official/templ-syntax-highlight)
+
 ## Links
 
-- [templ Documentation](https://templ.guide)
-- [templ GitHub](https://github.com/a-h/templ)
-- [VS Code Extension API](https://code.visualstudio.com/api)
+- [templ Documentation](https://templ.guide) - Official templ documentation
+- [templ GitHub](https://github.com/a-h/templ) - templ source code
+- [VS Code Extension API](https://code.visualstudio.com/api) - VS Code extension development
+- [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=shaik-noor.templ-syntax-highlight) - Extension marketplace page
+- [Open VSX Registry](https://open-vsx.org/extension/shaik-noor/templ-syntax-highlight) - Open VSX extension page
 
 ## Support
 
